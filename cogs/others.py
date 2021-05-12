@@ -1,7 +1,5 @@
 import discord
-from discord import colour
 from discord.ext import commands
-from discord.ext.commands.core import command
 
 
 class others(commands.Cog):
