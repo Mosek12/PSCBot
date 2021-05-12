@@ -15,7 +15,6 @@ class gen(commands.Cog):
 
     @commands.command()
     async def psc(self, ctx, arg):
-        a = 0
 
         digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
@@ -35,16 +34,13 @@ class gen(commands.Cog):
             colour=discord.Colour.random()
         )
 
-        while a != arg:
-            a += 1
-            await ctx.author.send(embed=embed1)
-            await ctx.send(embed=embed2)
-            await asyncio.sleep(20)
-            await ctx.channel.purge(limit=3)
+        await ctx.author.send(embed=embed1)
+        await ctx.send(embed=embed2)
+        await asyncio.sleep(20)
+        await ctx.channel.purge(limit=3)
 
     @commands.command()
     async def nitro(self, ctx, arg):
-        a = 0
         letters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
                    'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
@@ -61,12 +57,10 @@ class gen(commands.Cog):
             colour=discord.Colour.random()
         )
 
-        while a != arg:
-            a += 1
-            await ctx.author.send(embed=embed1)
-            await ctx.send(embed=embed2)
-            await asyncio.sleep(20)
-            await ctx.channel.purge(limit=3)
+        await ctx.author.send(embed=embed1)
+        await ctx.send(embed=embed2)
+        await asyncio.sleep(20)
+        await ctx.channel.purge(limit=3)
 
 
 def setup(bot):
