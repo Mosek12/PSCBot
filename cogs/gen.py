@@ -14,7 +14,7 @@ class gen(commands.Cog):
         print('Załadowano gen')
 
     @commands.command()
-    async def psc(self, ctx, arg):
+    async def psc(self, ctx):
 
         digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
@@ -40,7 +40,7 @@ class gen(commands.Cog):
         await ctx.channel.purge(limit=3)
 
     @commands.command()
-    async def nitro(self, ctx, arg):
+    async def nitro(self, ctx):
         letters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
                    'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
