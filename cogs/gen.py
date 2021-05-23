@@ -85,7 +85,8 @@ class gen(commands.Cog):
             description=f'||Email: {account.random_email()}||\n||Password: {account.random_password()}||',
             colour=discord.Colour.orange()
         )
-        emd.set_thumbnail(url='https://i.redd.it/mvoen8wq3w831.png')
+        emd.set_thumbnail(
+            url='https://www.linkpicture.com/q/origin-logo.png')
 
         await generate(ctx, emd)
 

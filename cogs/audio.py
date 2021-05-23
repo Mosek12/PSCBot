@@ -3,7 +3,6 @@ from discord.ext import commands
 import asyncio
 import random
 from gtts import gTTS
-import os
 
 
 async def play_file(ctx, filename):
