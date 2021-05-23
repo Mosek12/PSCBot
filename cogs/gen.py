@@ -2,6 +2,28 @@ import discord
 from discord.ext import commands
 import asyncio
 import random
+from openpyxl import load_workbook
+
+
+class account:
+    def random_email():
+        wb = load_workbook("assets/accounts.xlsx")
+        ws = wb.get_sheet_by_name('accounts')
+        columnA = ws['A']
+        email = [columnA[x].value for x in range(len(columnA))]
+        random_email = random.choice(email)
+        while random_email == None:
+            random_email = random.choice(email)
+        return random_email
+
+    def random_password():
+        wb = load_workbook("assets/accounts.xlsx")
+        ws = wb.get_sheet_by_name('accounts')
+        columnB = ws['B']
+        password = [columnB[x].value for x in range(len(columnB))]
+        random_password = str(random.choice(password)) + \
+            str(random.choice(password))
+        return random_password
 
 
 async def generate(ctx, emd):
@@ -52,6 +74,17 @@ class gen(commands.Cog):
             colour=discord.Colour.orange()
         )
 
+        emd.set_thumbnail(url='https://i.redd.it/mvoen8wq3w831.png')
+
+        await generate(ctx, emd)
+
+    @commands.command()
+    async def origin(self, ctx):
+        emd = discord.Embed(
+            title='Your Origin account password and email is down here',
+            description=f'||Email: {account.random_email()}||\n||Password: {account.random_password()}||',
+            colour=discord.Colour.orange()
+        )
         emd.set_thumbnail(url='https://i.redd.it/mvoen8wq3w831.png')
 
         await generate(ctx, emd)
