@@ -1,3 +1,4 @@
+from cogs.audio import audio
 import discord
 from discord.ext import commands
 
@@ -23,6 +24,8 @@ class help(commands.Cog):
             name="Generate", value="Commands, which generates psc/nitro", inline=True)
         helpem.add_field(
             name="Load", value="Commands, which are really advanced", inline=True)
+        helpem.add_field(
+            name="Audio", value="Audio related commands", inline=True)
         helpem.add_field(
             name="Others", value="All other commands", inline=True)
 
@@ -58,6 +61,22 @@ class help(commands.Cog):
 
         await ctx.send(embed=helplo)
 
+    @help.group(pass_context=True, invoke_without_command=True, aliases=['Music', 'Audio', 'music'])
+    async def audio(self, ctx):
+        helpat = discord.Embed(
+            title='Help | Others Page',
+            description=f'Audio commands',
+            colour=discord.Colour.red()
+        )
+
+        helpat.add_field(
+            name="tts", value="Text to speech", inline=True)
+
+        helpat.add_field(
+            name="patus", value="...", inline=True)
+
+        await ctx.send(embed=helpat)
+
     @help.group(pass_context=True, invoke_without_command=True, aliases=['Others', 'other', 'Other'])
     async def others(self, ctx):
 
@@ -69,6 +88,9 @@ class help(commands.Cog):
 
         helpot.add_field(
             name="ping", value="Displays bot\'s ping", inline=True)
+
+        helpot.add_field(
+            name="count", value="Counts to the given number", inline=True)
 
         await ctx.send(embed=helpot)
 
@@ -92,9 +114,21 @@ class help(commands.Cog):
     async def reload(self, ctx):
         await ctx.send("Reloads an extention, which you've chosen `g!reload <name of extention>`")
 
+    @audio.command(pass_context=True)
+    async def tts(self, ctx):
+        await ctx.send("`g!tts [text you want to convert to speech]`")
+
+    @audio.command(pass_context=True)
+    async def patus(self, ctx):
+        await ctx.send("`g!patus`")
+
     @others.command(pass_context=True)
     async def ping(self, ctx):
         await ctx.send("Shows bot\'s ping `g!ping`")
+
+    @others.command(pass_context=True)
+    async def count(self, ctx):
+        await ctx.send("`g!count [number you want to count to]`")
 
 
 def setup(bot):
