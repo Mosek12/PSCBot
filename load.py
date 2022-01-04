@@ -11,7 +11,7 @@ bot = commands.Bot(command_prefix='g!', help_command=None)
 @bot.event
 async def on_ready():
     print('Załadowano plik ładujący')
-    await bot.change_presence(activity=discord.Streaming(name='Our site/Information', url='https://www.youtube.com/watch?v=7GrlTxyijEY'))
+    await bot.change_presence(activity=discord.Streaming(name='Our site/Information', url='http://giery.j.pl/'))
 
 
 @bot.command()
